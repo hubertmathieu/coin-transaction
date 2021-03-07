@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    form(method="POST", action"/transfert")
+        .form-group
+            .row
+                .col-4
+                    label Adresse courriel
+                    input.form-control(placeholder='example@hotmail.com' name='email')
+                .col-4
+                    label Nom d'utilisateur
+                    input.form-control(placeholder='_example123' name='username')
+                .col-4
+                    label Montant
+                    .input-group
+                        input.form-control.m-input.amount-input(placeholder='150.98' name='amount')
+                        .input-group-prepend
+                            .input-group-text.radius
+                                i.fab.fa-bitcoin.icon.fa-lg
+
+            .row
+                .col-8
+                .col-4
+                    button.btn.btn-success.float-right.mt-4(type='submit') Envoyer
+

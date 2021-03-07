@@ -1,0 +1,17 @@
+{
+  firstname: ,
+  lastname: ,
+  email: ,
+  authentication: {
+    username: ,
+    password:
+  }
+  currentAmout: ,
+  transaction: [{
+    "amout": ,
+    "email" ,
+    "date": ,
+    "isProfit":
+  }]
+
+}

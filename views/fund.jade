@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    form(method="POST", action"/fund")
+        .form-group
+            .row
+                .col-6
+                    label Carte de Crédit
+                    input.form-control.credit-input(placeholder='1234123412341234' name='credit')
+                .col-2
+                    label Expiration
+                    input.form-control(placeholder='22/03' name='expiration')
+                .col-4
+                    label Montant
+                    .input-group
+                        input.form-control.m-input.amount-input(placeholder='150.98' name='amount')
+                        .input-group-prepend
+                            .input-group-text.radius $
+            .row
+                .col-8
+                .col-4
+                    button.btn.btn-success.float-right.mt-4(type='submit') Envoyer
+
+

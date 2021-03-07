@@ -1,0 +1,55 @@
+extends layout
+
+block content
+
+    table.table.tableSecure
+        thead.thead-dark
+            tr.tableTitle
+                th(scope='col') Adresse couriel
+                th(scope='col') Montant
+                th(scope='col') Date
+
+        tbody
+            each transaction in transactions
+                tr
+                    th=transaction['email']
+                    if transaction['isProfit'] == true
+                        th.profit="+" + transaction['amount']
+                    else
+                        th.lost="-" + transaction['amount']
+                    th=transaction['date']
+    br
+    br
+    .row
+        .col-8
+            canvas#line-chart.w-100.float-left
+        .col-4
+            br
+            br
+            h3.font-weight-bold="Revenus : " + revenue + "$"
+            br
+            h3.font-weight-bold="Dépenses : " + spending + "$"
+
+
+    script.
+        new Chart(document.getElementById("line-chart"), {
+            type: 'pie',
+            data: {
+                labels: ["Dépense", "Revenue"],
+                datasets: [{
+                    label: "Population (millions)",
+                    backgroundColor: ["#b54141", "#28b701"],
+                    data: ["#{spending}", "#{revenue}"]
+                }]
+            },
+            options: {
+                title: {
+                    fontFamily: "'Titillium Web', sans-serif",
+                    fontSize: 24,
+                    fontColor: '#000000',
+                    display: true,
+                    text: 'Voici vos statistiques sur vos transferts'
+                }
+            }
+        });
+

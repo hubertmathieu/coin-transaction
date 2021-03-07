@@ -1,0 +1,30 @@
+
+html
+    head
+        meta(charset="utf-8")
+        title="Demo | Index"
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+
+
+    body
+        .backgroundGrid
+            img.imageIndex(src='/images/pexels-moose-photos-1036635.jpg')
+        .row
+            .col-6
+            div.col-6.index
+                h1=title
+                div.graybox.col-9
+                    p.indexText It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it look like readable English.
+                    br
+                    .row
+                        .col-5
+                            a(href="/signup")
+                                button.btn.btn-outline.button(id='activeButton') S'inscrire
+                        .col-2
+                        .col-5
+
+                            a(href="/login")
+                                button.btn.btn-outlin.button Connexion
+
+

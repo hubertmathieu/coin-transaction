@@ -1,0 +1,32 @@
+html
+    head
+        meta(charset="utf-8")
+        title="Demo | Index"
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+
+
+    body
+        .backgroundGrid
+            img.imageIndex(src='/images/pexels-moose-photos-1036635.jpg')
+        .row
+            .col-6
+            .col-6.index
+                h1=title
+                div.graybox.col-9
+                    form(method="POST", action="/login")
+                        if errors != null
+                            .row.fail-flash
+                                each error in errors
+                                    p.text-flash=error.msg
+                        .form-group
+                            label(for='email').label Couriel
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text.emailSign @
+                                input#email(name="email" type='email' aria-describedby='emailHelp' placeholder='Entrez votre email').form-control.input
+                            small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+                        .form-group
+                            label(for='password').label Mot de passe
+                            input#password(name="password" type='password' placeholder='Password').form-control.input
+                        button(type='submit' id='activeButton').btn.btn-outlin.button.mt-2 Se connecter
